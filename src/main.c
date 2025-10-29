@@ -6,6 +6,7 @@
 #include "i2s.h"
 #include "gpio.h"
 #include "audio.h"
+#include "motor.h"
 
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -37,6 +38,7 @@ int main(void)
   MX_DMA_Init();
   MX_I2S3_Init();
   MX_I2C1_Init();
+  init_motor(&stepper1);
 
   /* Init scheduler */
   osKernelInitialize();
